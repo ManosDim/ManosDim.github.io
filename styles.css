@@ -1,103 +1,46 @@
-/* Basic reset for margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Import the "Source Code Pro" font */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
-/* Set a grey background for the entire body */
 body {
+    font-family: 'Source Code Pro', monospace;
     background-color: #f4f4f4;
     color: #333;
-    font-family: 'Courier New', Courier, monospace; /* Coding-like font */
-    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-/* Container class for content */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Header styling */
 header {
     background: #333;
     color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
+    padding: 20px 0;
+    text-align: center;
 }
 
 header a {
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
 }
 
-header ul {
+header .highlight {
+    color: #e8491d;
+}
+
+header nav ul {
     padding: 0;
     list-style: none;
 }
 
-header li {
-    float: left;
+header nav ul li {
     display: inline;
-    padding: 0 20px 0 20px;
+    margin: 0 5px;
 }
 
-header #branding {
-    float: left;
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
-header #branding h1 {
-    margin: 0;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-/* Section styling */
-section {
-    padding: 20px 0;
-}
-
-/* Footer styling */
-footer {
+#showcase {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-/* Specific styling for the showcase section */
-#showcase {
-    background: #777;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-}
-
-#showcase h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-#showcase p {
-    font-size: 20px;
-}
-
-/* Specific styling for the container within each section */
-section.container {
-    padding: 20px;
-    background: #fff;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
