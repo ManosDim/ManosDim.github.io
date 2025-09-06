@@ -3,71 +3,505 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Manos Dimogerontakis</title>
+        <meta name="description" content="About Manos Dimogerontakis - CV, Bio, Audio Programming, Sound Engineering, Live Electronics" />
+        <meta name="author" content="Manos Dimogerontakis" />
+        <title>About - Manos Dimogerontakis</title>
+        
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!-- Custom CSS -->
-     <style>
-        .fa-soundcloud, .fa-github {
-            color: black; /* Set icon color to black */
-        }
-    </style>
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><p class="font-monospace">Manos Dimogerontakis</p></a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
             
-                        
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><p class="font-monospace">Home</p></a></li>
-                        <li class="nav-item"><a class="nav-link" href="works.html"><p class="font-monospace">Works</p></a></li>
-                        <li class="nav-item"><a class="nav-link" href="reasoning.html"><p class="font-monospace">Reasoning</p></a></li>
-                        
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background-image: url('cov.jpg');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: scroll; /* Better for mobile */
+                min-height: 100vh;
+                color: white;
+                position: relative;
+            }
+            
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7); /* Black overlay */
+                z-index: -1;
+                pointer-events: none;
+            }
+            
+            /* Navigation */
+            .navbar {
+                background: rgba(0, 0, 0, 0.3) !important;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .navbar-brand {
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+            
+            .nav-link {
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                color: #fff !important;
+            }
+            
+            /* Main Content */
+            .about-section {
+                padding: 3rem 0;
+                min-height: calc(100vh - 76px);
+            }
+            
+            .about-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            
+            .about-title {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 20px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+            }
+            
+            .about-title h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: #fff;
+            }
+            
+            .about-title p {
+                font-size: 1.2rem;
+                color: rgba(255, 255, 255, 0.8);
+                margin: 0;
+            }
+            
+            /* CV Container */
+            .cv-container {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 15px;
+                padding: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                margin-bottom: 3rem;
+            }
+            
+            .cv-controls {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+            }
+            
+            .cv-btn {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 0.8rem 1.5rem;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                font-family: monospace;
+            }
+            
+            .cv-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .cv-btn.active {
+                background: #74b9ff;
+                color: white;
+                border-color: #74b9ff;
+            }
+            
+            /* PDF Viewer */
+            .pdf-viewer {
+                width: 100%;
+                height: 800px;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.95);
+                overflow: hidden;
+            }
+            
+            .pdf-viewer iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 10px;
+            }
+            
+            /* Bio Section */
+            .bio-section {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 15px;
+                padding: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                margin-bottom: 3rem;
+                display: none;
+            }
+            
+            .bio-section.active {
+                display: block;
+            }
+            
+            .bio-section h3 {
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: #fdcb6e;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            
+            .bio-section p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 1.5rem;
+                text-align: justify;
+            }
+            
+            .bio-section p:last-child {
+                margin-bottom: 0;
+            }
+            
+            /* Social Links */
+            .social-section {
+                text-align: center;
+                margin: 3rem 0;
+            }
+            
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .social-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .social-link:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            }
+            
+            .social-link i {
+                font-size: 1.5rem;
+            }
+            
+            /* Footer */
+            footer {
+                background: rgba(0, 0, 0, 0.3);
+                color: rgba(255, 255, 255, 0.8);
+                text-align: center;
+                padding: 2rem 0;
+                margin-top: 2rem;
+                backdrop-filter: blur(10px);
+            }
+            
+            /* Mobile Styles */
+            @media (max-width: 768px) {
+                .about-title {
+                    padding: 1.5rem;
+                    margin: 1rem;
+                }
+                
+                .about-title h2 {
+                    font-size: 2rem;
+                }
+                
+                .about-title p {
+                    font-size: 1rem;
+                }
+                
+                .cv-container, .bio-section {
+                    padding: 1.5rem;
+                    margin: 1rem;
+                }
+                
+                .pdf-viewer {
+                    height: 600px;
+                }
+                
+                .cv-controls {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .cv-btn {
+                    width: 200px;
+                    text-align: center;
+                }
+                
+                .bio-section h3 {
+                    font-size: 1.5rem;
+                }
+                
+                .bio-section p {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+                
+                .social-links {
+                    gap: 1.5rem;
+                }
+                
+                .social-link {
+                    width: 70px;
+                    height: 70px;
+                }
+                
+                .social-link i {
+                    font-size: 1.8rem;
+                }
+            }
+            
+            /* Very small screens */
+            @media (max-width: 480px) {
+                .about-section {
+                    padding: 1rem 0;
+                }
+                
+                .about-title {
+                    padding: 1rem;
+                    margin: 0.5rem;
+                }
+                
+                .about-title h2 {
+                    font-size: 1.6rem;
+                }
+                
+                .cv-container, .bio-section {
+                    padding: 1rem;
+                    margin: 0.5rem;
+                }
+                
+                .pdf-viewer {
+                    height: 500px;
+                }
+            }
+            
+            /* Desktop styles */
+            @media (min-width: 1025px) {
+                body {
+                    background-attachment: fixed; /* Fixed background only on desktop */
+                }
+                
+                .about-title h2 {
+                    font-size: 3rem;
+                }
+                
+                .about-title p {
+                    font-size: 1.3rem;
+                }
+                
+                .about-title {
+                    padding: 3rem;
+                }
+                
+                .cv-container, .bio-section {
+                    padding: 3rem;
+                }
+                
+                .pdf-viewer {
+                    height: 900px;
+                }
+            }
+            
+            /* Smooth animations */
+            .about-section {
+                animation: fadeInUp 1s ease-out;
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* Accessibility */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand font-monospace" href="index.html">Manos Dimogerontakis</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace" href="works.html">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace" href="reasoning.html">Reasoning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active font-monospace" href="about.html">About</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
-          <!-- Page content-->
-    <section id="works" class="container">
-       
-     
-        <div class="container">
-  
-<div class="text-center mt-5">
-                 <div class="title-background">
-                <h1>CV</h1> 
-                <h2></h2>
-                <h3></h3>
-              </div>
-           </div>
-        </div>
-        <div class="ratio ratio-1x1">
-             <iframe src="newcv (2).pdf" alowfullscreen ></iframe>
-             </div>
-       <div class="mt-3">
-                <a href="https://soundcloud.com/litchnoise" target="_blank">
-                    <i class="fab fa-soundcloud fa-2x"></i> <!-- Font Awesome SoundCloud Icon -->
-                </a>
-                   </a>
-                <a href="https://github.com/ManosDim" target="_blank" class="mx-2">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
+        
+        <!-- About Section -->
+        <div class="about-section">
+            <div class="container">
+                <div class="about-header">
+                    <div class="about-title">
+                        <h2>About</h2>
+                        <p>CV, Bio, and Background</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Controls -->
+                <div class="cv-controls">
+                    <button class="cv-btn active" onclick="showSection('cv')">CV</button>
+                    <button class="cv-btn" onclick="showSection('bio')">Bio</button>
+                    <a href="newcv (2).pdf" target="_blank" class="cv-btn">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                
+                <!-- CV Section -->
+                <div id="cv-section" class="cv-container">
+                    <div class="pdf-viewer">
+                        <iframe src="newcv (2).pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <!-- Bio Section -->
+                <div id="bio-section" class="bio-section">
+                    <h3>Biography</h3>
+                    <p>Manos Dimogerontakis is a sound artist, audio programmer, and live electronics performer based in Copenhagen. His work explores the intersection of technology and human expression through innovative approaches to sound synthesis, interactive systems, and real-time audio processing.</p>
+                    
+                    <p>With a background in both computer science and music technology, Manos develops custom software instruments and interactive installations that challenge conventional boundaries between performer, instrument, and audience. His projects range from algorithmic composition tools to tangible music interfaces that incorporate haptic feedback and gestural control.</p>
+                    
+                    <p>As a performer, he specializes in live electronics, creating immersive sonic experiences that blend acoustic and digital elements. His performances often feature real-time audio manipulation, generative processes, and collaborative improvisations with other musicians and technology.</p>
+                    
+                    <p>Currently pursuing advanced studies in music technology and sound design, Manos continues to push the boundaries of what's possible when human creativity meets computational power. His work has been featured in various festivals and venues across Europe, contributing to the evolving landscape of contemporary electronic music and sound art.</p>
+                </div>
+                
+                <div class="social-section">
+                    <div class="social-links">
+                        <a href="https://soundcloud.com/litchnoise" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="SoundCloud">
+                            <i class="fab fa-soundcloud"></i>
+                        </a>
+                        <a href="https://github.com/ManosDim" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Manos Dimogerontakis</p>
-       
-    </footer>
-</body>
+        </div>
+        
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Manos Dimogerontakis</p>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            function showSection(section) {
+                // Hide all sections
+                document.getElementById('cv-section').style.display = 'none';
+                document.getElementById('bio-section').classList.remove('active');
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.cv-btn').forEach(btn => {
+                    if (btn.onclick) btn.classList.remove('active');
+                });
+                
+                // Show selected section and activate button
+                if (section === 'cv') {
+                    document.getElementById('cv-section').style.display = 'block';
+                    event.target.classList.add('active');
+                } else if (section === 'bio') {
+                    document.getElementById('bio-section').classList.add('active');
+                    event.target.classList.add('active');
+                }
+            }
+            
+            // Auto-close mobile menu when clicking links
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
