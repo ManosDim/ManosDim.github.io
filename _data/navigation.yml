@@ -1,0 +1,16 @@
+- title: Home
+  url: /
+
+- title: Works
+  url: /works/
+
+- title: Projects
+  url: /projects/
+
+- title: Info
+  children:
+    - title: About
+      url: /about/
+    - divider: true
+    - title: Random stuff
+      url: "#"

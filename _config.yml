@@ -1,0 +1,48 @@
+# -----------------------------------------------------------------------------
+# Site Settings
+# -----------------------------------------------------------------------------
+
+title: blank
+first_name: Manos
+middle_name:
+last_name: Dimogerontakis
+description: >
+  An audio programmer, sound engineer, and sound artist focused on digital musical
+  instrument design and inclusive musical interactions.
+keywords: audio programming, sound engineering, live electronics, digital musical instruments
+lang: en
+
+url: https://manosdim.github.io
+baseurl:
+
+# -----------------------------------------------------------------------------
+# Jekyll Settings
+# -----------------------------------------------------------------------------
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - vendor
+
+sass:
+  style: compressed
+
+# -----------------------------------------------------------------------------
+# Plugins
+# -----------------------------------------------------------------------------
+
+plugins:
+  - jekyll-sitemap
+
+# Sitemap: exclude assets
+defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false

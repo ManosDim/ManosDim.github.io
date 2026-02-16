@@ -1,13 +1,87 @@
----
-layout: custom
-title: Projects
-description: "Project Area by Manos Dimogerontakis - Audio Programming, Sound Engineering, Live Electronics"
-permalink: /projects/
-background_image: /assets/img/cov.jpg
-hide_social: true
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Project Area by Manos Dimogerontakis - Audio Programming, Sound Engineering, Live Electronics" />
+    <meta name="author" content="Manos Dimogerontakis" />
+    <title>Projects - Manos Dimogerontakis</title>
 
-<!-- Projects Section -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/site-theme.css">
+    
+
+    
+</head>
+
+<body class="has-overlay" style="background-image: url('/assets/img/cov.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: scroll;">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand font-monospace" href="/">Manos Dimogerontakis</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace " href="/">Home</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace " href="/works/">Works</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace active" href="/projects/">Projects</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle font-monospace" href="#" role="button" data-bs-toggle="dropdown">
+                                Info
+                            </a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a class="dropdown-item" href="/about/">About</a></li>
+                                    
+                                
+                                    
+                                        <li><hr class="dropdown-divider"></li>
+                                    
+                                
+                                    
+                                        <li><a class="dropdown-item" href="/">Random stuff</a></li>
+                                    
+                                
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Projects Section -->
 <div class="works-section animate-fade-in">
     <div class="container">
         <div class="section-header">
@@ -120,6 +194,67 @@ hide_social: true
             </div>
         </div>
 
-        {% include custom-social.liquid %}
+        <div class="social-section">
+    <div class="social-links">
+        
+            <a href="https://soundcloud.com/litchnoise" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="SoundCloud">
+                <i class="fab fa-soundcloud"></i>
+            </a>
+        
+        
+            <a href="https://github.com/ManosDim" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        
+        
+        
     </div>
 </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        <footer>
+    <div class="container">
+        <p>&copy; 2026 Manos Dimogerontakis</p>
+    </div>
+</footer>
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Auto-close mobile menu when clicking links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    
+
+    
+</body>
+</html>

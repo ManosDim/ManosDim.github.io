@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="About Manos Dimogerontakis - CV, Bio, Audio Programming, Sound Engineering, Live Electronics" />
+    <meta name="author" content="Manos Dimogerontakis" />
+    <title>About - Manos Dimogerontakis</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/site-theme.css">
+    
+
+    
+</head>
+
+<body class="has-overlay" style="background-image: url('/assets/img/cov.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: scroll;">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand font-monospace" href="/">Manos Dimogerontakis</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace " href="/">Home</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace " href="/works/">Works</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item">
+                            <a class="nav-link font-monospace " href="/projects/">Projects</a>
+                        </li>
+                    
+                
+                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle font-monospace" href="#" role="button" data-bs-toggle="dropdown">
+                                Info
+                            </a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a class="dropdown-item" href="/about/">About</a></li>
+                                    
+                                
+                                    
+                                        <li><hr class="dropdown-divider"></li>
+                                    
+                                
+                                    
+                                        <li><a class="dropdown-item" href="/">Random stuff</a></li>
+                                    
+                                
+                            </ul>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- About Section -->
+<div class="about-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>About</h2>
+                <p>CV, Bio, and Background</p>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="cv-controls">
+            <button class="cv-btn active" onclick="showSection('cv')">CV</button>
+            <button class="cv-btn" onclick="showSection('bio')">Bio</button>
+            <a href="/assets/pdf/newcv%20(2).pdf" target="_blank" class="cv-btn">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+
+        <!-- CV Section -->
+        <div id="cv-section" class="cv-container">
+            <div class="pdf-viewer">
+                <iframe src="/assets/pdf/newcv%20(2).pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Bio Section -->
+        <div id="bio-section" class="bio-section">
+            <h3>Biography</h3>
+            <p>Manos Dimogerontakis is a sound artist, audio programmer, and live electronics performer based in Copenhagen. His work explores the intersection of technology and human expression through innovative approaches to sound synthesis, interactive systems, and real-time audio processing.</p>
+
+            <p>With a background in both computer science and music technology, Manos develops custom software instruments and interactive installations that challenge conventional boundaries between performer, instrument, and audience. His projects range from algorithmic composition tools to tangible music interfaces that incorporate haptic feedback and gestural control.</p>
+
+            <p>As a performer, he specializes in live electronics, creating immersive sonic experiences that blend acoustic and digital elements. His performances often feature real-time audio manipulation, generative processes, and collaborative improvisations with other musicians and technology.</p>
+
+            <p>Currently pursuing advanced studies in music technology and sound design, Manos continues to push the boundaries of what's possible when human creativity meets computational power. His work has been featured in various festivals and venues across Europe, contributing to the evolving landscape of contemporary electronic music and sound art.</p>
+        </div>
+
+        <div class="social-section">
+    <div class="social-links">
+        
+            <a href="https://soundcloud.com/litchnoise" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="SoundCloud">
+                <i class="fab fa-soundcloud"></i>
+            </a>
+        
+        
+            <a href="https://github.com/ManosDim" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+</div>
+
+<script>
+    function showSection(section) {
+        // Hide all sections
+        document.getElementById('cv-section').style.display = 'none';
+        document.getElementById('bio-section').classList.remove('active');
+
+        // Remove active class from all buttons
+        document.querySelectorAll('.cv-btn').forEach(btn => {
+            if (btn.onclick) btn.classList.remove('active');
+        });
+
+        // Show selected section and activate button
+        if (section === 'cv') {
+            document.getElementById('cv-section').style.display = 'block';
+            event.target.classList.add('active');
+        } else if (section === 'bio') {
+            document.getElementById('bio-section').classList.add('active');
+            event.target.classList.add('active');
+        }
+    }
+</script>
+
+
+    
+
+    
+        <footer>
+    <div class="container">
+        <p>&copy; 2026 Manos Dimogerontakis</p>
+    </div>
+</footer>
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Auto-close mobile menu when clicking links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <meta name="author" content="{{ site.first_name }} {{ site.last_name }}" />
+    <title>{% if page.title and page.title != false %}{{ page.title }} - {% endif %}{{ site.first_name }} {{ site.last_name }}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/site-theme.css' | relative_url }}">
+    {% if page.extra_css %}
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="{{ page.extra_css | relative_url }}">
+    {% endif %}
+
+    {% if page.inline_style %}
+    <style>
+        {{ page.inline_style }}
+    </style>
+    {% endif %}
+</head>
+
+<body class="{{ page.body_class | default: 'has-overlay' }}" {% if page.background_image %}style="background-image: url('{{ page.background_image | relative_url }}'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: scroll;"{% endif %}>
+
+    {% include custom-navbar.liquid %}
+
+    {{ content }}
+
+    {% unless page.hide_social %}
+        {% include custom-social.liquid %}
+    {% endunless %}
+
+    {% unless page.hide_footer %}
+        {% include custom-footer.liquid %}
+    {% endunless %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Auto-close mobile menu when clicking links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    {% if page.extra_js %}
+    <script src="{{ page.extra_js | relative_url }}"></script>
+    {% endif %}
+
+    {% if page.inline_script %}
+    <script>
+        {{ page.inline_script }}
+    </script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,97 @@
+// =============================================================================
+// Home Page Styles
+// =============================================================================
+
+.hero-section {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #fff;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+    }
+}
+
+// Mobile
+@media (max-width: 768px) {
+    .hero-title {
+        padding: 1.5rem;
+        margin: 1rem;
+
+        h1 { font-size: 1.6rem; }
+        h2 { font-size: 1.2rem; }
+        h3 { font-size: 1rem; }
+    }
+
+    .hero-section {
+        padding: 1rem;
+    }
+}
+
+// Very small screens
+@media (max-width: 480px) {
+    .hero-title {
+        padding: 1rem;
+        margin: 0.5rem;
+
+        h1 { font-size: 1.4rem; }
+        h2 { font-size: 1.1rem; }
+        h3 { font-size: 0.95rem; }
+    }
+}
+
+// Tablet
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.6rem; }
+        h3 { font-size: 1.3rem; }
+    }
+}
+
+// Desktop
+@media (min-width: 1025px) {
+    .hero-title {
+        padding: 3rem;
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.8rem; }
+        h3 { font-size: 1.4rem; }
+    }
+}
