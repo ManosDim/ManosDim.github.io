@@ -172,15 +172,19 @@ footer {
 
 .work-card-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 200px;
   object-fit: cover;
+  object-position: center;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .work-card-img-placeholder {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 200px;
+}
+
+.work-card-img-placeholder {
   background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.15));
   display: flex;
   align-items: center;
