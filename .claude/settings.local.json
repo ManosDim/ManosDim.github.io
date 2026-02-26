@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/c/Users/Manos Dimogerontakis/Desktop/website/ManosDim.github.io/projects/webplugin.html\":*)",
+      "Bash(git status -u)"
+    ]
+  }
+}
