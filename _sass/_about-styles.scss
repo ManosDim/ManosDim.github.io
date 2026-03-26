@@ -1,152 +1,119 @@
 // =============================================================================
-// About / CV Page Styles
+// About / CV Page
 // =============================================================================
 
 .about-section {
-    padding: 3rem 0;
-    min-height: calc(100vh - 76px);
-    animation: fadeInUp 1s ease-out;
+  padding: 3rem 0;
+  min-height: calc(100vh - 60px);
+  animation: fadeInUp 0.6s ease-out;
 }
 
-// CV Controls (tab buttons)
+// CV Controls
 .cv-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .cv-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    font-family: monospace;
-    cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.75rem 1.5rem 0.75rem 0;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1.5rem;
 
-    &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+  &:hover { color: var(--text); }
 
-    &.active {
-        background: #74b9ff;
-        color: white;
-        border-color: #74b9ff;
-    }
+  &.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
 }
 
-// PDF Viewer
+// PDF / CV Container
 .cv-container {
-    @extend .glass-card;
-    margin-bottom: 3rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+  padding: 0;
 }
 
 .pdf-viewer {
-    width: 100%;
-    height: 800px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.95);
-    overflow: hidden;
+  width: 100%;
+  height: 800px;
+  border: none;
+  background: #fff;
+  overflow: hidden;
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 10px;
-    }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 }
 
 // Bio Section
 .bio-section {
-    @extend .glass-card;
-    margin-bottom: 3rem;
-    display: none;
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  display: none;
+  background: var(--bg);
 
-    &.active {
-        display: block;
-    }
+  &.active { display: block; }
 
-    h3 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: #fdcb6e;
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
+  h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
 
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 1.5rem;
-        text-align: justify;
+  p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 1.2rem;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+    &:last-child { margin-bottom: 0; }
+  }
 }
 
 // Mobile
 @media (max-width: 768px) {
-    .cv-container, .bio-section {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
+  .cv-container, .bio-section {
+    margin: 0 0 2rem;
+  }
 
-    .pdf-viewer {
-        height: 600px;
-    }
+  .bio-section { padding: 1.5rem; }
 
-    .cv-controls {
-        flex-direction: column;
-        align-items: center;
-    }
+  .pdf-viewer { height: 600px; }
 
-    .cv-btn {
-        width: 200px;
-        text-align: center;
-    }
-
-    .bio-section {
-        h3 { font-size: 1.5rem; }
-        p { font-size: 1rem; text-align: left; }
-    }
+  .cv-controls { flex-wrap: wrap; }
 }
 
-// Very small screens
 @media (max-width: 480px) {
-    .about-section {
-        padding: 1rem 0;
-    }
-
-    .cv-container, .bio-section {
-        padding: 1rem;
-        margin: 0.5rem;
-    }
-
-    .pdf-viewer {
-        height: 500px;
-    }
+  .about-section { padding: 1.5rem 0; }
+  .pdf-viewer { height: 500px; }
 }
 
-// Desktop
 @media (min-width: 1025px) {
-    .cv-container, .bio-section {
-        padding: 3rem;
-    }
-
-    .pdf-viewer {
-        height: 900px;
-    }
+  .bio-section { padding: 3rem; }
+  .pdf-viewer { height: 900px; }
 }

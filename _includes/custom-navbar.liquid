@@ -1,18 +1,18 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand font-monospace" href="{{ '/' | relative_url }}">{{ site.first_name }} {{ site.last_name }}</a>
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.first_name }} {{ site.last_name }}</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center">
                 {% for link in site.data.navigation %}
                     {% if link.children %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle font-monospace" href="#" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 {{ link.title }}
                             </a>
                             <ul class="dropdown-menu">
@@ -27,10 +27,13 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link font-monospace {% if page.url == link.url %}active{% endif %}" href="{{ link.url | relative_url }}">{{ link.title }}</a>
+                            <a class="nav-link {% if page.url == link.url %}active{% endif %}" href="{{ link.url | relative_url }}">{{ link.title }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">◐</button>
+                </li>
             </ul>
         </div>
     </div>
